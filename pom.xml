@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.orangefunction</groupId>
+    <artifactId>tomcat-redis-session-manager</artifactId>
+    <name>tomcat-redis-session-manager</name>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+
+    <description>
+        tomcat 8.5.+ version tomcat-redis-session-manager
+        The modified part refers to the online solution
+        compile by xhsgg12302 with maven 3.6.0
+    </description>
+
+    <inceptionYear>2020/07/03</inceptionYear>
+
+    <developers>
+        <developer>
+            <id>jcoleman</id>
+            <name>James Coleman</name>
+            <email>jtc331@gmail.com</email>
+            <url>https://github.com/jcoleman</url>
+        </developer>
+    </developers>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>[2.5.2]</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-catalina</artifactId>
+            <version>8.5.43</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-coyote</artifactId>
+            <version>7.0.27</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+    </dependencies>
+
+    <!-- 发布到私服插件<mvn deploy> -->
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Internal releases</name>
+            <url>http://39.107.88.49:13308/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Internal snapshots</name>
+            <url>http://39.107.88.49:13308/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
